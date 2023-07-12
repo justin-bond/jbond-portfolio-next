@@ -1,0 +1,15 @@
+// -- Color Functions -- //
+
+/*
+ * function for getting solid colors from the solid colors map
+ *
+ * @requires $default-alpha
+ * @requires $solid-colors
+*/
+@function solid-color($name, $alpha: $default-alpha) {
+  $color: map-get($solid-colors, $name);
+
+  $color: rgba($color, $alpha);
+
+  @return $color;
+}

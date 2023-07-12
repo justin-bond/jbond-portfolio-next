@@ -1,0 +1,83 @@
+// -- 404 Page -- //
+
+$ns: '.page-404';
+
+#{$ns} {
+  margin-bottom: 100px;
+  text-align: center;
+  min-height: 45vh;
+
+  @media only screen and (min-width: 1025px) {
+    min-height: inherit;
+  }
+
+  #space-invaders {
+    margin: 0 auto 50px;
+    display: block;
+    background: #FFF;
+    border: 0.5px solid;
+  }
+
+  h1,
+  h4 {
+    margin-bottom: 2em;
+  }
+
+  &__invaders {
+    display: none;
+
+    @media only screen and (min-width: 1025px) {
+      display: block;
+    }
+  }
+
+  .label {
+    background-color: #FFF;
+    display: inline;
+    padding: 0.3em 0.6em 0.2em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+  }
+
+  button {
+    border: solid 1px #FFF;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 12px 26px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    line-height: 1;
+    color: #FFF;
+    margin-bottom: 50px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0%;
+      z-index: -1;
+      background-color: #FFF;
+      transition: all 0.35s ease 30ms;
+    }
+
+    &:hover {
+      background-color: initial;
+      color: #262626;
+
+      &:after {
+        height: 100%;
+      }
+    }
+  }
+}

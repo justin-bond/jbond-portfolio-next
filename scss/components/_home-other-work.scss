@@ -1,0 +1,50 @@
+// -- Home Other Work -- //
+
+$ns: '.component-home-other-work';
+
+#{$ns} {
+  margin-bottom: 75px;
+
+  &__text {
+    font-family: $share-tech-mono;
+    margin-bottom: 57px;
+
+    span {
+      color: solid-color('code-blue');
+    }
+  }
+
+  &__items {
+    font-family: $share-tech-mono;
+
+    @include at-tablet {
+      display: flex;
+      flex-flow: wrap column;
+      max-height: 215px;
+      width: 85%;
+      margin-left: 2%;
+    }
+
+    @include at-laptop {
+      width: 65%;
+      margin-left: 10%;
+    }
+
+    li {
+      margin-bottom: 22px;
+      margin-left: 40px;
+      padding-right: 15px;
+
+      &:before {
+        content: '//';
+        margin-left: -40px;
+        margin-right: 20px;
+      }
+
+      a {
+        color: solid-color('code-blue');
+        @include link-underline;
+      }
+    }
+  }
+}

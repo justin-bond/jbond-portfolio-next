@@ -1,0 +1,29 @@
+// -- Typography Variables -- //
+
+/* ============================================================================
+ * Font Family
+*/
+// Roboto example
+// $font-family-roboto-regular: 'Roboto', $font-family-fallback;
+
+$raleway: 'Raleway', sans-serif;
+$share-tech-mono: 'Share Tech Mono', monospace;
+
+// $base-font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+$base-font-family: $raleway;
+$heading-font-family: $base-font-family;
+$font-family-fallback: $base-font-family;
+
+/* ============================================================================
+ * Font Sizes
+*/
+$base-font-size: 1em;
+
+/* ============================================================================
+ * Line Heights
+*/
+$base-line-height: 1.15;
+$heading-line-height: 1.2;
+
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;

@@ -1,0 +1,82 @@
+// -- Breakpoint Mixins -- //
+
+/* ============================================================================
+ * widths
+*/
+
+/*
+ * mixin to query mobile width and up
+ *
+ * @requires $mobile-up
+*/
+@mixin at-mobile {
+  @media only screen and ($mobile-up) {
+    @content;
+  }
+}
+
+/*
+ * mixin to query tablet width and up
+ *
+ * @requires $tablet-up
+*/
+@mixin at-tablet {
+  @media only screen and ($tablet-up) {
+    @content;
+  }
+}
+
+/*
+ * mixin to query laptop width and up
+ *
+ * @requires $laptop-up
+*/
+@mixin at-laptop {
+  @media only screen and ($laptop-up) {
+    @content;
+  }
+}
+
+/*
+ * mixin to query desktop width and up
+ *
+ * @requires $desktop-up
+*/
+@mixin at-desktop {
+  @media only screen and ($desktop-up) {
+    @content;
+  }
+}
+
+/*
+ * mixin to query widescreen width and up
+ *
+ * @requires $widescreen-up
+*/
+@mixin at-widescreen {
+  @media only screen and ($widescreen-up) {
+    @content;
+  }
+}
+
+/* ============================================================================
+ * orientations
+*/
+
+/*
+ * mixin to query portrait screen orientation
+*/
+@mixin if-portrait {
+  @media only screen and (orientation: portrait) {
+    @content;
+  }
+}
+
+/*
+ * mixin to query landscape screen orientation
+*/
+@mixin if-landscape {
+  @media only screen and (orientation: landscape) {
+    @content;
+  }
+}

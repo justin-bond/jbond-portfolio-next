@@ -1,0 +1,21 @@
+// -- Breakpoint Variables -- //
+
+/* ============================================================================
+ * widths
+*/
+
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+$widescreen: 1400px;
+
+/* ============================================================================
+ * media feature expressions
+*/
+
+$mobile-up: 'min-width: #{$mobile}';
+$tablet-up: 'min-width: #{$tablet}';
+$laptop-up: 'min-width: #{$laptop}';
+$desktop-up: 'min-width: #{$desktop}';
+$widescreen-up: 'min-width: #{$widescreen}';

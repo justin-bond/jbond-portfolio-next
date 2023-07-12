@@ -1,0 +1,17 @@
+// -- Import Shame Partials --//
+
+/*
+ * All the CSS hacks and overrides we're not proud of, but save us in the end.
+ * Import your shame accordingly.
+*/
+
+// transition link override
+.tl-edges {
+  overflow-x: inherit;
+}
+
+.tl-wrapper-status--entering {
+  + .tl-wrapper-status--exiting {
+    opacity: 0 !important;
+  }
+}

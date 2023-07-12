@@ -1,0 +1,12 @@
+// -- Layout Mixins -- //
+
+/*
+ * mixin for clear fix (clear floats)
+*/
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

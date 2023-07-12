@@ -1,0 +1,10 @@
+// -- Import Template Partials -- //
+
+/*
+ * This file is used to contain all layout imports.
+ * Files inside this folder should contain all styles relating to a reusable layouts.
+*/
+
+@import 'templates'; // this should always be first
+
+@import 'work-template';

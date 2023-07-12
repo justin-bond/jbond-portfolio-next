@@ -1,0 +1,23 @@
+// -- Animations -- //
+
+@mixin indecator--level {
+  width: 40px;
+  height: 8px;
+  margin-right: 4px;
+  border-radius: 4px;
+}
+
+@mixin indicator--level__easy {
+  background-color: #5AAC1E;
+  @include indecator--level;
+}
+
+@mixin indicator--level__moderate {
+  background-color: #20A5F8;
+  @include indecator--level;
+}
+
+@mixin indicator--level__hard {
+  background-color: #F84A20;
+  @include indecator--level;
+}

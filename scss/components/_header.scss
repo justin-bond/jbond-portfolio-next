@@ -1,0 +1,18 @@
+// -- Header -- //
+
+$ns: ".component-header";
+
+#{$ns} {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include at-laptop {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  &__logo {
+    width: 80px;
+  }
+}

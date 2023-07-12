@@ -1,0 +1,114 @@
+// -- Container -- //
+
+$ns: '.component-contact';
+
+#{$ns} {
+  margin-bottom: 100px;
+
+  @include at-tablet {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.75);
+  }
+
+  &--form__container {
+    background-color: #212121;
+    padding: 61px 15px;
+
+    @include at-tablet {
+      padding: 61px 123px 115px;
+    }
+  }
+
+  &--form__title {
+    font-size: 24px;
+    margin-bottom: 60px;
+  }
+
+  &--form {
+    transition: all 1s ease-in-out;
+    max-height: 1000px;
+    opacity: 1;
+
+    @include at-tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 120px;
+      grid-row-gap: 60px;
+    }
+
+    &.collapse {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    > div {
+      min-height: 85px;
+    }
+
+    label {
+      color: #999999;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    input[type='text'] {
+      background-color: transparent;
+      border-radius: 0;
+      border: 0;
+      border-bottom: solid 0.5px #999999;
+      box-shadow: none;
+      padding: 0;
+      transition: all 0.2s ease-in-out;
+      margin-top: 20px;
+
+      &:focus,
+      &.has-text {
+        padding: 0 0 10px;
+      }
+    }
+
+    button[type='submit'] {
+      @include btn--primary;
+    }
+
+    &__pitfall {
+      display: none;
+    }
+  }
+
+  &--form__message,
+  &--form__submit {
+    grid-column: 1 / span 2;
+  }
+
+  &--social {
+    background-color: #070707;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    min-height: 250px;
+  }
+
+  &--social__icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 15px;
+
+    a {
+      color: solid-color('white');
+
+      &:hover {
+        color: solid-color('code-blue');
+      }
+    }
+
+    svg {
+      font-size: 30px;
+    }
+  }
+}

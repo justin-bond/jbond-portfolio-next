@@ -1,0 +1,10 @@
+// -- Z-Index Mixins -- //
+
+/*
+ * mixin to set z-index level using global z-index map
+ *
+ * @requires $z-index
+*/
+@mixin z-index($level) {
+  z-index: map-get($z-index, $level);
+}

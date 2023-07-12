@@ -1,0 +1,12 @@
+// -- Import Page Partials -- //
+
+/*
+ * Page specific styles.
+ *
+ * IMPORTANT NOTE
+ * Pages SCSS shouldn't really have to be used. They're here just in case.
+*/
+
+@import 'pages'; // this should always be first
+
+@import '404';
