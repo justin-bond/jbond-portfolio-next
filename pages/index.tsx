@@ -27,7 +27,12 @@ export default function Index({ page }: IndexProps) {
   );
 }
 
-Index.getInitialProps = async () => {
+// Index.getInitialProps = async () => {
+//   const page = await getPage('home');
+//   return { page };
+// };
+
+export async function getStaticProps() {
   const page = await getPage('home');
-  return { page };
-};
+  return { props: { page } };
+}
