@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import classNames from "classnames";
-import gsap from "gsap";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import React, { useEffect } from 'react';
+import classNames from 'classnames';
+import gsap from 'gsap';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const nsBase = "component";
+const nsBase = 'component';
 const ns = `${nsBase}-home-intro`;
 
 const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
   const rootClassnames = classNames({
-    [`${ns}`]: true,
+    [`${ns}`]: true
   });
 
   let homeIntroText = null as any;
@@ -21,7 +21,7 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
       opacity: 0,
       y: 100,
       delay: 1,
-      stagger: 0.5,
+      stagger: 0.5
     });
   }, [homeIntroText]);
 
@@ -40,15 +40,15 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
 
   const options = {
     renderMark: {
-      [MARKS.BOLD]: (text: any) => <Bold>{text}</Bold>,
+      [MARKS.BOLD]: (text: any) => <Bold>{text}</Bold>
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>,
       [BLOCKS.UL_LIST]: (node: any, children: any) => <UL>{children}</UL>,
       [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
         <ListItem>{children}</ListItem>
-      ),
-    },
+      )
+    }
   };
 
   return (

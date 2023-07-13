@@ -1,6 +1,6 @@
 // -- Home Intro -- //
 
-$ns: ".component-home-intro";
+$ns: '.component-home-intro';
 
 #{$ns} {
   padding-bottom: 40px;
@@ -29,8 +29,8 @@ $ns: ".component-home-intro";
       margin-left: 40px;
 
       &:before {
-        color: solid-color("code-blue");
-        content: "//";
+        color: solid-color('code-blue');
+        content: '//';
         margin-left: -40px;
         margin-right: 20px;
       }

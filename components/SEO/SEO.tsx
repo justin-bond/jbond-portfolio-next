@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { useEffect, useState } from "react";
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 interface SEOProps {
   metaTitle?: string;
@@ -7,10 +7,10 @@ interface SEOProps {
 }
 
 const SEO = ({ metaTitle, metaDescription }: SEOProps) => {
-  const defaultMetaTitle = "Justin Bond";
-  const defaultMetaDescription = "this is it!";
-  const metaImage = "";
-  const [metaUrl, setMetaUrl] = useState("");
+  const defaultMetaTitle = 'Justin Bond';
+  const defaultMetaDescription = 'this is it!';
+  const metaImage = '';
+  const [metaUrl, setMetaUrl] = useState('');
 
   const seoMetaTitle = metaTitle || defaultMetaTitle;
   const seoMetaDescription = metaDescription || defaultMetaDescription;

@@ -1,14 +1,14 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 
-import Container from "../Container";
+import Container from '../Container';
 
-const nsBase = "component";
+const nsBase = 'component';
 const ns = `${nsBase}-footer`;
 
 const Footer = () => {
   const rootClassnames = classNames({
-    [`${ns}`]: true,
+    [`${ns}`]: true
   });
   const date = new Date().getFullYear();
 
