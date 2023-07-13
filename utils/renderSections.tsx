@@ -1,10 +1,11 @@
 import Intro from '@/components/Intro';
-import WorkList from '@/components/WorkList';
+import WorkFeaturedList from '@/components/WorkFeaturedList';
+import WorkOtherList from '@/components/WorkOtherList';
 
 export const renderSections = (sections: any) => {
   return sections.map((section: any) => {
+    // console.log(section);
     const sectionId = section?.sys?.contentType?.sys?.id;
-    // console.log(sectionId);
 
     if (!sectionId) return null;
 
@@ -12,7 +13,21 @@ export const renderSections = (sections: any) => {
       case 'intro':
         return <Intro key={sectionId} {...section.fields} />;
       case 'workList':
-        return <WorkList key={sectionId} {...section.fields} />;
+        if (section.fields.featuredWork) {
+          return (
+            <WorkFeaturedList
+              key={sectionId + section.fields.cmsName}
+              {...section.fields}
+            />
+          );
+        }
+
+        return (
+          <WorkOtherList
+            key={sectionId + section.fields.cmsName}
+            {...section.fields}
+          />
+        );
       default:
         return null;
     }

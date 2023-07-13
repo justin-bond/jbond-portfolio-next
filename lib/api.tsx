@@ -8,7 +8,8 @@ const client = createClient({
 export const getPage = async (handle: string) => {
   const response = await client.getEntries({
     content_type: 'page',
-    'fields.handle[in]': handle
+    'fields.handle[in]': handle,
+    include: 10
   });
 
   return response.items[0];

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/google-font-display */
 import React from 'react';
 
 import Document, {
@@ -16,7 +17,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=Raleway:600,700|Share+Tech+Mono"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
