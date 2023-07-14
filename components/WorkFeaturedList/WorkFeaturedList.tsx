@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
+import Reveal from '../Reveal';
 
 interface WorkListProps {
   work: [];
@@ -29,17 +30,19 @@ const WorkList = ({ work }: WorkListProps) => {
       backgroundImage: `url(${mainImage?.fields.file.url}`
     };
     return (
-      <div className={`${ns}__item ${ns}__item-${handle}`} key={handle}>
-        <Link href={`/work/${handle}`}>
-          {' '}
-          <div className={`${ns}__item--logo`}>
-            <img src={logo?.fields.file.url} alt={title} />
-          </div>
-          <div className={`${ns}__item--hover`} style={sectionStyle}>
-            {title}
-          </div>
-        </Link>
-      </div>
+      <Reveal key={handle}>
+        <div className={`${ns}__item ${ns}__item-${handle}`}>
+          <Link href={`/work/${handle}`}>
+            {' '}
+            <div className={`${ns}__item--logo`}>
+              <img src={logo?.fields.file.url} alt={title} />
+            </div>
+            <div className={`${ns}__item--hover`} style={sectionStyle}>
+              {title}
+            </div>
+          </Link>
+        </div>
+      </Reveal>
     );
   };
 
