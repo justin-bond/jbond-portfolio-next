@@ -1,4 +1,5 @@
 import Intro from '@/components/Intro';
+import Reveal from '@/components/Reveal';
 import WorkFeaturedList from '@/components/WorkFeaturedList';
 import WorkOtherList from '@/components/WorkOtherList';
 
@@ -15,18 +16,16 @@ export const renderSections = (sections: any) => {
       case 'workList':
         if (section.fields.featuredWork) {
           return (
-            <WorkFeaturedList
-              key={sectionId + section.fields.cmsName}
-              {...section.fields}
-            />
+            <Reveal key={sectionId + section.fields.cmsName}>
+              <WorkFeaturedList {...section.fields} />
+            </Reveal>
           );
         }
 
         return (
-          <WorkOtherList
-            key={sectionId + section.fields.cmsName}
-            {...section.fields}
-          />
+          <Reveal key={sectionId + section.fields.cmsName}>
+            <WorkOtherList {...section.fields} />
+          </Reveal>
         );
       default:
         return null;
