@@ -4,8 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '../Container';
-// import AnchorLink from "./AnchorLink";
-// import Nav from './Nav';
+import Nav from '../Nav';
 
 const nsBase = 'component';
 const ns = `${nsBase}-header`;
@@ -28,7 +27,7 @@ const Header = () => {
           />
         </Link>
       </Container>
-      {/* <Nav /> */}
+      <Nav />
     </header>
   );
 };
