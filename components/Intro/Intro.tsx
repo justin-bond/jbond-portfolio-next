@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import gsap from 'gsap';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { renderContentfulRichText } from '@/utils/renderContentfulRichText';
 
 const nsBase = 'component';
 const ns = `${nsBase}-home-intro`;
@@ -25,32 +24,6 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
     });
   }, [homeIntroText]);
 
-  const Bold = ({ children }: { children: string }) => (
-    <span className="bold">{children}</span>
-  );
-
-  const Text = ({ children }: { children: string }) => children;
-
-  const UL = ({ children }: { children: string }) => (
-    <ul className={`${ns}__bullets`}>{children}</ul>
-  );
-  const ListItem = ({ children }: { children: string }) => (
-    <li className={`${ns}__bullet`}>{children}</li>
-  );
-
-  const options = {
-    renderMark: {
-      [MARKS.BOLD]: (text: any) => <Bold>{text}</Bold>
-    },
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>,
-      [BLOCKS.UL_LIST]: (node: any, children: any) => <UL>{children}</UL>,
-      [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-        <ListItem>{children}</ListItem>
-      )
-    }
-  };
-
   return (
     <div className={rootClassnames}>
       <h1
@@ -61,7 +34,9 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
       >
         {title}
       </h1>
-      {documentToReactComponents(bullets, options)}
+      <div className={`${ns}__description`}>
+        {renderContentfulRichText(bullets)}
+      </div>
     </div>
   );
 };

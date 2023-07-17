@@ -5,7 +5,9 @@ import { getContentTypes, getPage, getWork } from '@/lib/api';
 import Container from '@/components/Container';
 import Reveal from '@/components/Reveal';
 import Link from 'next/link';
-// import SEO from '@/components/SEO';
+import SEO from '@/components/SEO';
+import WorkHero from '@/components/WorkHero';
+import { renderContentfulRichText } from '@/utils/renderContentfulRichText';
 
 const nsBase = 'template';
 const ns = `${nsBase}-work`;
@@ -18,7 +20,8 @@ const Work = ({ page }: { page: ContentfulData }) => {
     description,
     disclaimer,
     websiteLink,
-    mainImage
+    mainImage,
+    videoLink
   } = page.fields;
 
   const rootClassnames = classNames({
@@ -28,14 +31,21 @@ const Work = ({ page }: { page: ContentfulData }) => {
 
   return (
     <div className={rootClassnames}>
-      {/* <SEO
-        title={`${seo.title || title} | Work`}
-        page={title}
-        image={metaImage}
-        description={seo.metaDescription}
-      /> */}
+      <SEO
+        metaTitle={`${title} | Work | Justin Bond`}
+        // page={title}
+        // image={metaImage}
+        // description={seo.metaDescription}
+      />
       <Container size={'small'}>
         <div className={`${ns}__container`}>
+          <Reveal>
+            <WorkHero
+              slug={handle}
+              image={mainImage?.fields.file.url}
+              video={videoLink}
+            />
+          </Reveal>
           <Reveal>
             <div className={`${ns}__title`}>
               <h1>{title}</h1>
@@ -50,6 +60,23 @@ const Work = ({ page }: { page: ContentfulData }) => {
               </div>
             </Reveal>
           )}
+          {description && (
+            <Reveal>
+              <div className={`${ns}__description`}>
+                {renderContentfulRichText(description)}
+              </div>
+            </Reveal>
+          )}
+          {disclaimer && (
+            <Reveal>
+              <div className={`${ns}__disclaimer`}>{disclaimer}</div>
+            </Reveal>
+          )}
+          <Reveal>
+            <div className={`${ns}__home`}>
+              <Link href={'/'}>Back to Home</Link>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </div>

@@ -39,7 +39,8 @@ $ns: '.template-work';
     }
   }
 
-  &__bullet {
+  &__description li {
+    display: block;
     list-style-type: none;
     margin-bottom: 22px;
     margin-left: 40px;
@@ -50,12 +51,16 @@ $ns: '.template-work';
       margin-left: -40px;
       margin-right: 20px;
     }
+
+    p {
+      display: inline-block;
+    }
   }
 
   &__disclaimer {
     font-style: italic;
     font-size: 12px;
     margin-bottom: 10px;
-    color: #DDD;
+    color: #ddd;
   }
 }

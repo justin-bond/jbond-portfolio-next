@@ -8,7 +8,8 @@ interface SEOProps {
 
 const SEO = ({ metaTitle, metaDescription }: SEOProps) => {
   const defaultMetaTitle = 'Justin Bond';
-  const defaultMetaDescription = 'this is it!';
+  const defaultMetaDescription =
+    'Justin Bond is a Frontend Engineer based out of Southern California.';
   const metaImage = '';
   const [metaUrl, setMetaUrl] = useState('');
 
