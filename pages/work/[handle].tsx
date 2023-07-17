@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 
-import { getContentTypes, getPage, getWork } from '@/lib/api';
-
 import Container from '@/components/Container';
 import Reveal from '@/components/Reveal';
 import Link from 'next/link';
 import SEO from '@/components/SEO';
 import WorkHero from '@/components/WorkHero';
+import Contact from '@/components/Contact';
+
+import { getContentTypes, getWork } from '@/lib/api';
 import { renderContentfulRichText } from '@/utils/renderContentfulRichText';
 
 const nsBase = 'template';
@@ -81,6 +82,9 @@ const Work = ({ page }: { page: ContentfulData }) => {
             </div>
           </Reveal>
         </div>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </Container>
     </div>
   );

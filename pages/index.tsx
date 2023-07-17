@@ -1,9 +1,10 @@
-import Head from 'next/head';
-
 import SEO from '@/components/SEO';
+import Container from '@/components/Container';
+import Reveal from '@/components/Reveal';
+import Contact from '@/components/Contact';
+
 import { getPage } from '@/lib/api';
 import { renderSections } from '@/utils/renderSections';
-import Container from '@/components/Container';
 
 interface IndexProps {
   page: ContentfulData;
@@ -19,6 +20,9 @@ export default function Index({ page }: IndexProps) {
     <Container size={'small'}>
       <SEO {...seo} />
       {renderSections(sections)}
+      <Reveal>
+        <Contact />
+      </Reveal>
     </Container>
   );
 }
