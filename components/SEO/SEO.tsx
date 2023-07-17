@@ -4,20 +4,22 @@ import { useEffect, useState } from 'react';
 interface SEOProps {
   metaTitle?: string;
   metaDescription?: string;
+  metaImage?: string;
 }
 
-const SEO = ({ metaTitle, metaDescription }: SEOProps) => {
+const SEO = ({ metaTitle, metaDescription, metaImage }: SEOProps) => {
   const defaultMetaTitle = 'Justin Bond';
   const defaultMetaDescription =
     'Justin Bond is a Frontend Engineer based out of Southern California.';
-  const metaImage = '';
-  const [metaUrl, setMetaUrl] = useState('');
+  const [metaUrl, setMetaUrl] = useState<any>({});
+  const defaultMetaImage = `${metaUrl.origin}/jb-logo-black.jpg`;
 
   const seoMetaTitle = metaTitle || defaultMetaTitle;
   const seoMetaDescription = metaDescription || defaultMetaDescription;
+  const seoMetaImage = metaImage || defaultMetaImage;
 
   useEffect(() => {
-    setMetaUrl(window.location.href);
+    setMetaUrl(window.location);
   }, []);
 
   return (
@@ -47,20 +49,22 @@ const SEO = ({ metaTitle, metaDescription }: SEOProps) => {
           <meta itemProp="description" content={seoMetaDescription} />
         </>
       )}
-      {metaImage && (
+      {seoMetaImage && (
         <>
-          <meta itemProp="image" content={metaImage} />
-          <meta property="og:image" content={metaImage} key="og:image" />
-          <meta property="twitter:image" content={metaImage} />
+          <meta itemProp="image" content={seoMetaImage} />
+          <meta property="og:image" content={seoMetaImage} key="og:image" />
+          <meta property="twitter:image" content={seoMetaImage} />
           <meta
             property="og:image:secure"
-            content={metaImage}
+            content={seoMetaImage}
             key="og:image:secure"
           />
         </>
       )}
 
-      {metaUrl && <meta property="og:url" content={metaUrl} key="og:url" />}
+      {metaUrl.href && (
+        <meta property="og:url" content={metaUrl.href} key="og:url" />
+      )}
 
       <meta property="og:type" content="website" key="og:type" />
       <meta property="twitter:card" content="summary" />

@@ -27,6 +27,8 @@
     "no-multi-spaces": "error",
     "space-in-parens": "error",
     "no-multiple-empty-lines": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    // Turn off NextJS Image warning
+    "@next/next/no-img-element": "off"
   }
 }

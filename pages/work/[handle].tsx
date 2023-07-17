@@ -14,7 +14,7 @@ const ns = `${nsBase}-work`;
 
 const Work = ({ page }: { page: ContentfulData }) => {
   const {
-    // seo: { fields: seo }
+    seo,
     title,
     handle,
     description,
@@ -32,9 +32,12 @@ const Work = ({ page }: { page: ContentfulData }) => {
   return (
     <div className={rootClassnames}>
       <SEO
-        metaTitle={`${title} | Work | Justin Bond`}
-        // page={title}
-        // image={metaImage}
+        {...seo}
+        metaTitle={`${seo?.fields.metaTitle || title} | Work | Justin Bond`}
+        metaImage={
+          seo?.fields.metaImage?.fields.file.url ||
+          `https:${mainImage?.fields.file.url}`
+        }
         // description={seo.metaDescription}
       />
       <Container size={'small'}>
