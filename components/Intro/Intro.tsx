@@ -15,7 +15,7 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
 
   useEffect(() => {
     gsap.from(homeIntroText, { duration: 1, opacity: 0, x: 100, delay: 0.5 });
-    gsap.from(`.${ns}__bullet`, {
+    gsap.from(`.${ns}__description li`, {
       duration: 1,
       opacity: 0,
       y: 100,

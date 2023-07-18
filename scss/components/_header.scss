@@ -1,15 +1,15 @@
 // -- Header -- //
 
-$ns: ".component-header";
+$ns: '.component-header';
 
 #{$ns} {
   position: relative;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   @include at-laptop {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   &__logo {
