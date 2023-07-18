@@ -27,6 +27,7 @@ const WorkList = ({ work }: WorkListProps) => {
     logo: any;
   }) => {
     const sectionStyle = {
+      opacity: 0,
       backgroundImage: `url(${mainImage?.fields.file.url}`
     };
     return (
@@ -38,7 +39,7 @@ const WorkList = ({ work }: WorkListProps) => {
               <img src={logo?.fields.file.url} alt={title} />
             </div>
             <div className={`${ns}__item--hover`} style={sectionStyle}>
-              {title}
+              <span>{title}</span>
             </div>
           </Link>
         </div>
