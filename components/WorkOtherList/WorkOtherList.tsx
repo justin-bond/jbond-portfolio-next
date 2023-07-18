@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { Waypoint } from 'react-waypoint';
 import gsap from 'gsap';
+import SmartLink from '../SmartLink';
 
 interface WorkListProps {
   work: [];
@@ -17,7 +18,7 @@ const WorkList = ({ work }: WorkListProps) => {
   });
   // console.log(work);
 
-  const homeOtherWorkBullets = [] as any[];
+  const homeOtherWorkBullets = [] as HTMLElement[];
   const bullet = '//';
   const [staggered, setStaggered] = useState(false);
 
@@ -51,12 +52,16 @@ const WorkList = ({ work }: WorkListProps) => {
       <li
         key={title}
         ref={(node) => {
-          homeOtherWorkBullets.push(node);
+          if (node) homeOtherWorkBullets.push(node);
         }}
       >
-        <Link href={`/work/${handle}`} className={'code-color-blue'}>
+        <SmartLink
+          href={`/work/${handle}`}
+          direction="right"
+          className={'code-color-blue'}
+        >
           {title}
-        </Link>
+        </SmartLink>
       </li>
     );
   };

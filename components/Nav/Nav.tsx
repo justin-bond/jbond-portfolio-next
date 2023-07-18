@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import { animateScroll } from 'react-scroll';
 import Link from 'next/link';
 
+import SmartLink from '../SmartLink';
+
 const nsBase = 'component';
 const ns = `${nsBase}-nav`;
 
@@ -57,7 +59,9 @@ const Nav = () => {
         <nav className={`${ns}__navigation`}>
           <ul>
             <li>
-              <Link href={'/'}>Home</Link>
+              <SmartLink href={'/'} direction="left">
+                Home
+              </SmartLink>
             </li>
             <li>
               <Link

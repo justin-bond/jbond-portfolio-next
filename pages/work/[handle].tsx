@@ -9,6 +9,7 @@ import Contact from '@/components/Contact';
 
 import { getContentTypes, getWork } from '@/lib/api';
 import { renderContentfulRichText } from '@/utils/renderContentfulRichText';
+import SmartLink from '@/components/SmartLink';
 
 const nsBase = 'template';
 const ns = `${nsBase}-work`;
@@ -78,7 +79,9 @@ const Work = ({ page }: { page: ContentfulData }) => {
           )}
           <Reveal>
             <div className={`${ns}__home`}>
-              <Link href={'/'}>Back to Home</Link>
+              <SmartLink href={'/'} direction="left">
+                Back to Home
+              </SmartLink>
             </div>
           </Reveal>
         </div>

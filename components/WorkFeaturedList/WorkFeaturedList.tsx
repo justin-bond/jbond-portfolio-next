@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import Image from 'next/image';
 import Reveal from '../Reveal';
+import SmartLink from '../SmartLink';
 
 interface WorkListProps {
   work: [];
@@ -33,15 +33,17 @@ const WorkList = ({ work }: WorkListProps) => {
     return (
       <Reveal key={handle}>
         <div className={`${ns}__item ${ns}__item-${handle}`}>
-          <Link href={`/work/${handle}`}>
-            {' '}
-            <div className={`${ns}__item--logo`}>
-              <img src={logo?.fields.file.url} alt={title} />
-            </div>
-            <div className={`${ns}__item--hover`} style={sectionStyle}>
-              <span>{title}</span>
-            </div>
-          </Link>
+          <SmartLink href={`/work/${handle}`} direction="right">
+            <>
+              {' '}
+              <div className={`${ns}__item--logo`}>
+                <img src={logo?.fields.file.url} alt={title} />
+              </div>
+              <div className={`${ns}__item--hover`} style={sectionStyle}>
+                <span>{title}</span>
+              </div>
+            </>
+          </SmartLink>
         </div>
       </Reveal>
     );

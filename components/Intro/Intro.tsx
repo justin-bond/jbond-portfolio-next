@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import gsap from 'gsap';
 import { renderContentfulRichText } from '@/utils/renderContentfulRichText';
@@ -11,10 +11,15 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
     [`${ns}`]: true
   });
 
-  let homeIntroText = null as any;
+  const titleRef = useRef(null);
 
   useEffect(() => {
-    gsap.from(homeIntroText, { duration: 1, opacity: 0, x: 100, delay: 0.5 });
+    gsap.from(titleRef?.current, {
+      duration: 1,
+      opacity: 0,
+      x: 100,
+      delay: 0.5
+    });
     gsap.from(`.${ns}__description li`, {
       duration: 1,
       opacity: 0,
@@ -22,16 +27,11 @@ const HomeIntro = ({ title, bullets }: { title: string; bullets: any }) => {
       delay: 1,
       stagger: 0.5
     });
-  }, [homeIntroText]);
+  }, []);
 
   return (
     <div className={rootClassnames}>
-      <h1
-        className={`${ns}__text`}
-        ref={(node) => {
-          homeIntroText = node;
-        }}
-      >
+      <h1 className={`${ns}__text`} ref={titleRef}>
         {title}
       </h1>
       <div className={`${ns}__description`}>

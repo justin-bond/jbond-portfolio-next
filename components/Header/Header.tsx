@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import Container from '../Container';
 import Nav from '../Nav';
+import SmartLink from '../SmartLink';
 
 const nsBase = 'component';
 const ns = `${nsBase}-header`;
@@ -17,7 +18,7 @@ const Header = () => {
   return (
     <header className={rootClassnames}>
       <Container>
-        <Link href={'/'}>
+        <SmartLink href={'/'} direction="left">
           <Image
             src="/jb-logo.svg"
             className={`${ns}__logo`}
@@ -25,7 +26,7 @@ const Header = () => {
             width={80}
             height={80}
           />
-        </Link>
+        </SmartLink>
       </Container>
       <Nav />
     </header>
