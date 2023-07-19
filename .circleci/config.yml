@@ -31,11 +31,19 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: lint
+          name: Run Linter
           command: npm run lint
       - run:
-          name: test
-          command: npm run test:ci
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run Tests
+          command: |
+            ./cc-test-reporter before-build
+            npm run test:ci
+            ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
