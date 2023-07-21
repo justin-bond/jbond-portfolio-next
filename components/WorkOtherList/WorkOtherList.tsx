@@ -4,10 +4,7 @@ import Link from 'next/link';
 import { Waypoint } from 'react-waypoint';
 import gsap from 'gsap';
 import SmartLink from '../SmartLink';
-
-interface WorkListProps {
-  work: [];
-}
+import { WorkListProps } from '../WorkFeaturedList/WorkFeaturedList';
 
 const nsBase = 'component';
 const ns = `${nsBase}-home-other-work`;

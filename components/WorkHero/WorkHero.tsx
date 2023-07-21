@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import parseVideo from '@/utils/parseVideo';
+import parseVideo from '../../utils/parseVideo';
 
 interface WorkHeroProps {
   slug: string;

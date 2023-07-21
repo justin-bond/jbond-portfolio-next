@@ -3,8 +3,17 @@ import Link from 'next/link';
 import Reveal from '../Reveal';
 import SmartLink from '../SmartLink';
 
-interface WorkListProps {
-  work: [];
+export interface IWork {
+  title: string;
+  handle: string;
+  mainImage?: any;
+  logo?: any;
+}
+
+export interface WorkListProps {
+  work: {
+    fields: IWork;
+  }[];
 }
 
 const nsBase = 'component';
@@ -15,17 +24,7 @@ const WorkList = ({ work }: WorkListProps) => {
     [`${ns}`]: true
   });
 
-  const renderFeaturedWork = ({
-    title,
-    handle,
-    mainImage,
-    logo
-  }: {
-    title: string;
-    handle: string;
-    mainImage: any;
-    logo: any;
-  }) => {
+  const renderFeaturedWork = ({ title, handle, mainImage, logo }: IWork) => {
     const sectionStyle = {
       opacity: 0,
       backgroundImage: `url(${mainImage?.fields.file.url}`

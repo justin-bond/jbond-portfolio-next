@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import gsap, { TimelineMax, Power1 } from 'gsap';
+import gsap, { Power1 } from 'gsap';
 import { useRouter } from 'next/router';
 
 interface SmartLinkProps {
