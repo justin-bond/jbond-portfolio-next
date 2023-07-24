@@ -13,7 +13,6 @@ const WorkList = ({ work }: WorkListProps) => {
   const rootClassnames = classNames({
     [`${ns}`]: true
   });
-  // console.log(work);
 
   const homeOtherWorkBullets = [] as HTMLElement[];
   const bullet = '//';

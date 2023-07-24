@@ -6,7 +6,8 @@ interface TransitionProps {
 }
 
 const Transition = ({ children }: TransitionProps) => {
-  const { asPath } = useRouter();
+  const router = useRouter();
+  const path = router?.asPath;
 
   const variants = {
     out: {
@@ -27,7 +28,7 @@ const Transition = ({ children }: TransitionProps) => {
   return (
     <AnimatePresence initial={false} mode="wait">
       <motion.div
-        key={asPath}
+        key={path}
         variants={variants}
         animate="in"
         initial="out"
