@@ -113,6 +113,8 @@ const Contact = () => {
         <div className={`${ns}--form__title`}>Lets Talk</div>
         <form
           className={`${ns}--form ${formShow}`}
+          name="contact"
+          aria-label="contact"
           onSubmit={(e) => {
             submitForm(e);
           }}
@@ -126,6 +128,7 @@ const Contact = () => {
                 }}
                 type={'text'}
                 name={'formName'}
+                aria-label={'formName'}
                 id={'name'}
                 required
               />
@@ -140,6 +143,7 @@ const Contact = () => {
                 }}
                 type={'email'}
                 name={'formEmail'}
+                aria-label={'formEmail'}
                 id={'email'}
                 required
               />
@@ -154,6 +158,7 @@ const Contact = () => {
                 }}
                 type={'tel'}
                 name={'formPhone'}
+                aria-label={'formPhone'}
                 id={'phone'}
                 required
               />
@@ -168,6 +173,7 @@ const Contact = () => {
                 }}
                 type={'text'}
                 name={'formCompany'}
+                aria-label={'formCompany'}
                 id={'company'}
               />
             </label>
@@ -181,6 +187,7 @@ const Contact = () => {
                 }}
                 type={'text'}
                 name={'formMessage'}
+                aria-label={'formMessage'}
                 id={'message'}
                 required
               />
