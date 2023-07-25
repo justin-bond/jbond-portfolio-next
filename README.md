@@ -1,34 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  Personal profile website
+</h1>
 
-## Getting Started
+<p align="center">
+  This website is built with Next.js and Contentful.
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://app.netlify.com/sites/jbond-nextjs/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/f10ad425-b98d-4577-baee-dd67a02d5189/deploy-status" alt="Netlify Status" />
+  </a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  <a href="https://dl.circleci.com/status-badge/redirect/gh/justin-bond/jbond-portfolio-next/tree/main">
+    <img src="https://dl.circleci.com/status-badge/img/gh/justin-bond/jbond-portfolio-next/tree/main.svg?style=shield" alt="Current CircleCI build status" />
+  </a>
+
+  <a href="https://codeclimate.com/github/justin-bond/jbond-portfolio-next/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/a940e7327d7e7f9acdf1/maintainability" alt="Maintainability" />
+  </a>
+
+  <a href="https://codeclimate.com/github/justin-bond/jbond-portfolio-next/test_coverage">
+    <img src="https://api.codeclimate.com/v1/badges/a940e7327d7e7f9acdf1/test_coverage" alt="Test Coverage" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://app.circleci.com/insights/github/justin-bond/jbond-portfolio-next/workflows/default/overview?branch=main&reporting-window=last-30-days&insights-snapshot=true">
+    <img src="https://dl.circleci.com/insights-snapshot/gh/justin-bond/jbond-portfolio-next/main/default/badge.svg?window=30d" alt="Netlify Status" />
+  </a>
+</p>
+
+## Local Development Setup
+
+### Prerequisites
+
+- Node 18.00.0+ (for local development, use nvm to install and utilize the appropriate version of node)
+
+### Setup Instructions
+
+1. Clone the repo.
+
+```shell
+git clone git@github.com:justin-bond/jbond-portfolio-next.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+OR
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+git clone https://github.com/justin-bond/jbond-portfolio-next.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Change to the project root directory.
 
-## Learn More
+```shell
+cd jbond-portfolio-next
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. Run npm install.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Environment Variables
 
-## Deploy on Vercel
+Copy the `.env.local.example` file in this directory to .env.local (which will be ignored by Git):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+cp .env.local.example .env.local
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Then set each variable on `.env.local`:
+
+- `CONTENTFUL_SPACE_ID` should be the **Space ID** field of your API Key
+- `CONTENTFUL_ACCESS_TOKEN` should be the **[Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) - access token** field of your API key
+- `CONTENTFUL_PREVIEW_ACCESS_TOKEN` should be the **[Content Preview API](https://www.contentful.com/developers/docs/references/content-preview-api/) - access token** field of your API key
+- `CONTENTFUL_PREVIEW_SECRET` should be any value you want. It must be URL friendly as the dashboard will send it as a query parameter to enable preview mode
+- - `CONTENTFUL_REVALIDATE_SECRET` should be any value you want. This will be the value you pass in as a secret header from the Contentful Webhook settings to use **[On-Demand Revalidation](https://vercel.com/docs/concepts/next.js/incremental-static-regeneration#on-demand-revalidation)**
+
+Your `.env.local` file should look like this:
+
+```bash
+CONTENTFUL_SPACE_ID=...
+CONTENTFUL_ACCESS_TOKEN=...
+CONTENTFUL_PREVIEW_ACCESS_TOKEN=...
+CONTENTFUL_PREVIEW_SECRET=...
+CONTENTFUL_REVALIDATE_SECRET=...
+```
+
+## Commands
+
+- **Start a development server**
+
+  ```shell
+  npm run dev
+  ```
+
+  Starts a hot-reloading development environment; accessible by default at [localhost:3000](http://localhost:3000).
+
+- **eslint**
+
+  ```shell
+  npm run lint
+  ```
+
+  Runs eslint to find problems with your code.
+
+  - **tests**
+
+  ```shell
+  npm run test
+  ```
+
+  Runs Jest for test coverage.
