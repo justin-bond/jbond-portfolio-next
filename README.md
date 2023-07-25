@@ -106,7 +106,7 @@ CONTENTFUL_REVALIDATE_SECRET=...
 
   Runs eslint to find problems with your code.
 
-  - **tests**
+- **tests**
 
   ```shell
   npm run test
