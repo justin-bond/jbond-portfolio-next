@@ -53,7 +53,7 @@ const Contact = () => {
       };
       // console.log(data);
 
-      fetch('https://api.justinbond.dev/contact-form/index.php', {
+      fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({
@@ -68,7 +68,7 @@ const Contact = () => {
         })
         .then((response) => {
           // console.log('Success:', response);
-          if (response.status === 1) {
+          if (response.success) {
             setContactState((prevState) => {
               return {
                 ...prevState,
