@@ -1,9 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  //   await cors(req, res);
   try {
-    const payload = req.body;
+    const payload = {
+      ...req.body,
+      date: new Date()
+    };
     const response = await fetch('https://api.justinbond.dev/contact/', {
       method: 'POST',
       body: JSON.stringify(payload),
