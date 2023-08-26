@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    if (req.method !== 'POST') throw new Error('true');
     const payload = {
       ...req.body,
       date: new Date()

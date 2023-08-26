@@ -43,11 +43,9 @@ export const sendSlackMessage = async (url: string, message: string) => {
     headers: new Headers({
       'Content-Type': 'application/json'
     })
-  })
-    .then((res) => res.json())
-    .catch((error) => {
-      console.error('Error:', error); // eslint-disable-line no-console
-    });
+  }).catch((error) => {
+    console.error('Error:', error); // eslint-disable-line no-console
+  });
 
   return response;
 };
