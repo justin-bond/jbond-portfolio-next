@@ -33,3 +33,21 @@ export const getPage = async (handle: string) => {
 
   return response.items[0];
 };
+
+export const sendSlackMessage = async (url: string, message: string) => {
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({
+      text: message
+    }),
+    headers: new Headers({
+      'Content-Type': 'application/json'
+    })
+  })
+    .then((res) => res.json())
+    .catch((error) => {
+      console.error('Error:', error); // eslint-disable-line no-console
+    });
+
+  return response;
+};

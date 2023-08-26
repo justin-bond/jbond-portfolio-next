@@ -1,3 +1,4 @@
+import { sendSlackMessage } from '@/lib/api';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -6,6 +7,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       ...req.body,
       date: new Date()
     };
+
+    let slackMessage = 'New Contact Form Submission\n';
+
+    Object.keys(payload).forEach((key) => {
+      slackMessage += `${key}: ${payload[key]}\n`;
+    });
+
+    sendSlackMessage(process.env.NEXT_SLACK_WEBHOOK_URL || '', slackMessage);
+
     const response = await fetch('https://api.justinbond.dev/contact/', {
       method: 'POST',
       body: JSON.stringify(payload),
