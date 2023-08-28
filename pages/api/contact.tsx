@@ -1,5 +1,7 @@
-import { sendSlackMessage } from '@/lib/api';
 import { NextApiRequest, NextApiResponse } from 'next';
+import * as Sentry from '@sentry/nextjs';
+
+import { sendSlackMessage } from '@/lib/api';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -32,6 +34,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error(response.error);
     }
   } catch (e: any) {
+    Sentry.captureException(e?.message);
     res.status(400).json({ error: e?.message });
   }
 };

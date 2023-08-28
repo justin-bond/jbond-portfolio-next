@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaCodepen } from 'react-icons/fa6';
 import { SiCodesandbox } from 'react-icons/si';
+import * as Sentry from '@sentry/nextjs';
 
 const nsBase = 'component';
 const ns = `${nsBase}-contact`;
@@ -64,6 +65,7 @@ const Contact = () => {
           return res.json();
         })
         .catch((error) => {
+          Sentry.captureException(error);
           console.error('Error:', error); // eslint-disable-line no-console
         })
         .then((response) => {

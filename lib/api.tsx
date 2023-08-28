@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import * as Sentry from '@sentry/nextjs';
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || '',
@@ -44,6 +45,7 @@ export const sendSlackMessage = async (url: string, message: string) => {
       'Content-Type': 'application/json'
     })
   }).catch((error) => {
+    Sentry.captureException(error);
     console.error('Error:', error); // eslint-disable-line no-console
   });
 
