@@ -4,6 +4,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.1.0
+  cypress: cypress-io/cypress@3
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -50,3 +51,9 @@ workflows:
   default:
     jobs:
       - test-and-lint
+  use-my-orb:
+    jobs:
+      - cypress/run:
+          cypress-command: npx cypress run --browser chrome
+          install-browsers: true
+          start-command: npm run start:dev
