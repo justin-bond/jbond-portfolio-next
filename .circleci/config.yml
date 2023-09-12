@@ -14,8 +14,6 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/node:18.4
-    environment:
-      CC_TEST_REPORTER_ID: 01807e032014f9d274d23fbec4587c8673a7bba3127ccc98813fbefb2a1a4520
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -51,7 +49,7 @@ workflows:
   default:
     jobs:
       - test-and-lint
-  use-my-orb:
+  e2e:
     jobs:
       - cypress/run:
           cypress-command: npx cypress run --browser chrome
