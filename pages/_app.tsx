@@ -7,6 +7,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Transition from '@/components/Transition';
 
+import GTMScript from '../components/scripts/GTMScript/GTMScript';
+
 import '../scss/main.scss';
 
 const nsBase = 'layout';
@@ -25,6 +27,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className={rootClassnames} ref={layoutRef}>
+      <GTMScript />
       <Header />
       <Transition>
         <Component {...pageProps} />

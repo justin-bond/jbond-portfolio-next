@@ -7,9 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://app.netlify.com/sites/jbond-nextjs/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/f10ad425-b98d-4577-baee-dd67a02d5189/deploy-status" alt="Netlify Status" />
-  </a>
+    <img src="https://therealsujitk-vercel-badge.vercel.app/?app=jbond-portfolio-next" alt="Vercel Status" />
 
   <a href="https://dl.circleci.com/status-badge/redirect/gh/justin-bond/jbond-portfolio-next/tree/main">
     <img src="https://dl.circleci.com/status-badge/img/gh/justin-bond/jbond-portfolio-next/tree/main.svg?style=shield" alt="Current CircleCI build status" />
