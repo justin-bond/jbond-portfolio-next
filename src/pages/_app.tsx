@@ -7,9 +7,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Transition from '@/components/Transition';
 
-import GTMScript from '../components/scripts/GTMScript/GTMScript';
+import GTMScript from '@/components/scripts/GTMScript/GTMScript';
 
-import '../scss/main.scss';
+import '@/scss/main.scss';
 
 const nsBase = 'layout';
 const ns = `${nsBase}-default`;
