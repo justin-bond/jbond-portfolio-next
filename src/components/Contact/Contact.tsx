@@ -219,16 +219,33 @@ const Contact = () => {
           <Link
             href={'https://www.linkedin.com/in/justinbond909/'}
             target={'_blank'}
+            aria-label="LinkedIn"
+            title="LinkedIn"
           >
             <FaLinkedin />
           </Link>
-          <Link href={'https://github.com/justin-bond'} target={'_blank'}>
+          <Link
+            href={'https://github.com/justin-bond'}
+            target={'_blank'}
+            aria-label="GitHub"
+            title="GitHub"
+          >
             <FaGithub />
           </Link>
-          <Link href={'https://codepen.io/justin-bond'} target={'_blank'}>
+          <Link
+            href={'https://codepen.io/justin-bond'}
+            target={'_blank'}
+            aria-label="CodePen"
+            title="CodePen"
+          >
             <FaCodepen />
           </Link>
-          <Link href={'https://codesandbox.io/u/justin-bond'} target={'_blank'}>
+          <Link
+            href={'https://codesandbox.io/u/justin-bond'}
+            target={'_blank'}
+            aria-label="CodeSandbox"
+            title="CodeSandbox"
+          >
             <SiCodesandbox />
           </Link>
         </div>
