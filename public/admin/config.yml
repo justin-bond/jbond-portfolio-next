@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  # name: test-repo
+  branch: feature/decap # Branch to update (optional; defaults to master)
+# publish_mode: editorial_workflow
+media_folder: 'public/images/uploads'
+public_folder: '/images/uploads'
+collections:
+  - name: 'projects'
+    label: 'Projects'
+    label_singular: 'Project'
+    folder: 'src/content/projects'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Project Image', name: 'projectImage', widget: 'image' }
+      - { label: 'Video Link', name: 'videoLink', widget: 'string' }
+      - { label: 'Website Link', name: 'websiteLink', widget: 'string' }
+      - {
+          label: 'Bullets',
+          name: 'bullets',
+          widget: 'list',
+          field: { label: 'bullet', name: 'bullet', widget: 'string' }
+        }
+      - { label: 'Desclaimer', name: 'desclaimer', widget: 'string' }
