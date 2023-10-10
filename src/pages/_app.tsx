@@ -3,6 +3,7 @@ import { AppProps } from 'next/app';
 import classNames from 'classnames';
 import gsap from 'gsap';
 
+import { raleway, share_tech_mono } from '@/fonts';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Transition from '@/components/Transition';
@@ -27,6 +28,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className={rootClassnames} ref={layoutRef}>
+      <style jsx global>
+        {`
+          :root {
+            --font-raleway: ${raleway.style.fontFamily};
+            --font-share-tech-mono: ${share_tech_mono.style.fontFamily};
+          }
+        `}
+      </style>
       <GTMScript />
       <Header />
       <Transition>
