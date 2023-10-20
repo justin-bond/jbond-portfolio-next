@@ -13,7 +13,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Logo', name: 'logo', widget: 'image', required: false }
       - { label: 'Project Image', name: 'projectImage', widget: 'image' }
       - { label: 'Video Link', name: 'videoLink', widget: 'string' }
       - { label: 'Website Link', name: 'websiteLink', widget: 'string' }
