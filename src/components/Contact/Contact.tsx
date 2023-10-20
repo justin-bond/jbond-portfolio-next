@@ -13,6 +13,8 @@ const Contact = () => {
     [`${ns}`]: true
   });
 
+  const [isFormSubmitting, setIsFormSubmitting] = useState(false);
+
   const [contactState, setContactState] = useState({
     form: '',
     formShow: true,
@@ -42,6 +44,7 @@ const Contact = () => {
 
   const submitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsFormSubmitting(true);
 
     if (!contactState.formPitfall) {
       const data = {
@@ -70,6 +73,7 @@ const Contact = () => {
         })
         .then((response) => {
           // console.log('Success:', response);
+          setIsFormSubmitting(false);
           if (response.success) {
             setContactState((prevState) => {
               return {
@@ -109,6 +113,7 @@ const Contact = () => {
   };
 
   const formShow = contactState.formShow ? '' : 'collapse';
+
   return (
     <div id={'contact'} className={rootClassnames}>
       <div className={`${ns}--form__container`}>
@@ -208,7 +213,9 @@ const Contact = () => {
             </label>
           </div>
           <div className={`${ns}--form__submit`}>
-            <button type={'submit'}>Submit Message</button>
+            <button type={'submit'} disabled={isFormSubmitting}>
+              {isFormSubmitting ? 'Submitting...' : 'Submit Message'}
+            </button>
           </div>
         </form>
         {getFormResponse()}
