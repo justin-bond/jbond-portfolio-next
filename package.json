@@ -27,6 +27,7 @@
     "eslint-config-next": "^13.4.9",
     "framer-motion": "^10.12.22",
     "gsap": "^3.12.1",
+    "mongodb": "^7.2.0",
     "next": "^13.4.9",
     "postcss": "^8.4.25",
     "react": "18.2.0",
