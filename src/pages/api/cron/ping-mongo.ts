@@ -44,6 +44,7 @@ export default async function handler(
     await client.connect();
     const db = client.db(dbName);
     await db.command({ ping: 1 });
+    await notifySlack(`MongoDB ping cron succeeded for database '${dbName}'`);
     return res.status(200).json({ success: true, database: dbName });
   } catch (error: any) {
     const errorMessage = error?.message || 'MongoDB ping failed';
